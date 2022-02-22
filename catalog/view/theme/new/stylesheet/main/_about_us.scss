@@ -1,0 +1,135 @@
+.about_us{
+  &__wrap{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 540px;
+  }
+  &__img-block{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 49%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 50px 5px;
+    overflow: hidden;
+    & img{
+      position: absolute;
+      width: 115%;
+      filter: brightness(.6);
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+  }
+  &__pluses{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 35px;
+    z-index: 200;
+  }
+  &__plus{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 35px;
+    & h3{
+      font-family: "Gotham-Pro";
+      font-size: 62px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 2.48px;
+      color: #f2f2f2;
+      margin-bottom: 10px;
+    }
+    & span{
+      opacity: 0.6;
+      font-family: "Gotham-Pro";
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #f2f2f2;
+      text-transform: uppercase;
+    }
+  }
+  &__desc-block{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 130px 160px 130px 60px;
+    width: 49%;
+    height: 100%;
+
+  }
+  &__title{
+    font-family: "Gotham-Pro";
+    font-size: 52px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.08px;
+    color: $title_color;
+    text-transform: uppercase;
+  }
+  &__text{
+    font-family: "Proxima-Nova";
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.7;
+    letter-spacing: normal;
+    color: #333333;
+    margin-bottom: 35px;
+  }
+  &__link{
+    font-family: "Gotham-Pro";
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    color: $title_color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    z-index: 200;
+    text-decoration: none;
+    transition: color .2s;
+    width: max-content;
+    &:hover{
+      transition: color .2s;
+      color: $orange;
+      & .arrow{
+        transition: .2s;
+        transform: translateX(50%);
+      }
+    }
+  }
+  &__yes-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 136px;
+    height: auto;
+  }
+  &__plane-img{
+    position: absolute;
+    bottom: -60px;
+    right: 160px;
+    width: 136px;
+    height: auto;
+  }
+}

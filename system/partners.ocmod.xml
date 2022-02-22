@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<modification>
+		<name>Partners</name>
+		<code>Partners</code>
+		<version>0.0.1</version>
+		<author>Roman Fedorov</author>
+  		
+  		<file path="admin/controller/common/column_left.php">
+    		<operation>
+    			<search><![CDATA[
+    				if ($this->user->hasPermission('access', 'catalog/recurring')) {
+    			]]></search>
+    			<add position="before"><![CDATA[
+				if ($this->user->hasPermission('access', 'extension/module/shop')) {
+                    $catalog[] = array(
+                        'name'	   => $this->language->get('text_partners'),
+                        'href'     => $this->url->link('extension/module/shop', 'token=' . $this->session->data['token'], true),
+                        'children' => array()		
+                    );
+			    }
+        		]]></add>
+    		</operation>
+  		</file>
+  		
+  		<file path="admin/language/ru-ru/common/column_left.php">
+    		<operation>
+    			<search><![CDATA[
+    				$_['text_product']          				= 'Товары';
+    			]]></search>
+    			<add  position="before"><![CDATA[
+					$_['text_partners']          				= 'Партнеры';
+        		]]></add>
+    		</operation>
+  		</file>
+  
+	</modification>

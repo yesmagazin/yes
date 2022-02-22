@@ -1,0 +1,23 @@
+.collect{
+  &__head{
+    background-image: url(../img/selected/Rectangle@3x.png) !important;
+  }
+  &__body{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+  }
+  &__wrap{
+    margin: 100px 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

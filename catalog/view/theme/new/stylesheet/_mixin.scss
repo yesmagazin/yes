@@ -1,0 +1,55 @@
+$orange: #ff8400;
+$title_color: #272727;
+$body_color: #333333;
+$dark_gray: #292b31;
+$gray_ap: rgba(39, 39, 39, 0.1);
+$orange_ap: rgba(255, 132, 0, 0.2);
+$blue_ap: rgba(47, 128, 237, 0.2);
+
+
+@mixin crumbs{
+.crumbs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: "Proxima-Nova";
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.7;
+  letter-spacing: normal;
+  color: #434343;
+  z-index: 200;
+
+  &__link {
+    font-family: "Proxima-Nova";
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.7;
+    letter-spacing: normal;
+    color: #434343;
+    transition: color .2s;
+    text-decoration: none;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      transition: color .2s;
+      cursor: pointer;
+      color: $orange;
+    }
+  }
+
+  &__active {
+    color: $orange;
+    margin: 0 10px;
+  }
+}
+
+}

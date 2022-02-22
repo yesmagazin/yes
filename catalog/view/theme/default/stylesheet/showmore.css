@@ -1,0 +1,15 @@
+#showmore {
+    background: none repeat scroll 0 0 #f7f9fa;
+    border-radius: 3px;
+    color: #97d2ff;
+    display: inline-block;
+    margin-bottom: 28px;
+    padding: 16px 1px;
+    text-align: center;
+    width: 100%;
+}
+#showmore a {
+    border-bottom: 1px dashed;
+    font-size: 20px;
+    text-decoration: none;
+}

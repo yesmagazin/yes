@@ -1,0 +1,751 @@
+&__sidebar{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  max-width: 355px;
+  margin-top: 50px;
+  align-items: center;
+  margin-right: 2%;
+  margin-bottom: 40px;
+  &-title{
+    font-family: "Gotham-Pro";
+    font-size: 21px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #272727;
+    width: 100%;
+    padding: 20px 30px;
+    border-bottom: 1px solid #e1e0e0;
+    cursor: pointer;
+    &:after{
+      position: absolute;
+      display: flex;
+      content: "";
+      width: 15px;
+      height: 3px;
+      background: $orange;
+      top: 30px;
+      right: 30px;
+      transform: translateY(-50%);
+    }
+    &:before{
+      position: absolute;
+      display: flex;
+      content: "";
+      width: 15px;
+      height: 3px;
+      background: $orange;
+      transform: rotate(90deg) translateX(-10%);
+      top: 30px;
+      right: 30px;
+      transition: width .2s;
+    }
+    &.active{
+      &:before{
+        width: 0;
+        transition: width .2s;
+      }
+    }
+  }
+}
+&__sort{
+  &-price{
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 10px;
+    &__pop-up{
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      &.active{
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+    }
+    & form{
+      position: relative;
+      display: flex;
+      width: 100%;
+      margin: 0 30px 20px 30px;
+      & label{
+        font-size: 12px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.17;
+        letter-spacing: normal;
+        color: #202124;
+      }
+    }
+  }
+  &-sex{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    align-items: center;
+    width: 100%;
+    &__box{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 35px 30px 25px;
+      font-family: "Gotham-Pro";
+      font-size: 18px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+      background-color: #fffefe;
+      width: 47%;
+      color: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: color .2s;
+      & img{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 65px;
+        width: auto;
+        margin-bottom: 25px;
+        opacity: .3;
+        transition: opacity .2s;
+      }
+      &.active{
+        color: $orange;
+        transition: color .2s;
+        & img{
+          opacity: 1;
+          transition: opacity .2s;
+        }
+      }
+      &:hover{
+        color: #000;
+        transition: color .2s;
+        & img{
+          opacity: 1;
+          transition: opacity .2s;
+        }
+      }
+    }
+  }
+  &-cat{
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+    &__pop-up{
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      padding: 0 30px 0 25px;
+      &.active{
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+      & span{
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #b5b5b6;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e1e0e0;
+        transition: border-bottom-color .2s;
+        &:hover{
+          transition: border-bottom-color .2s;
+          border-bottom: 1px solid #b9b8b8;
+        }
+        &:last-child{
+          border-bottom: 0 none;
+        }
+        & a{
+          font-family: "Proxima-Nova";
+          font-size: 16px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          color: #333333;
+          text-decoration: none;
+          margin: 15px 5px;
+          transition: font-weight .2s;
+          max-width: 60%;
+          &:hover{
+            font-weight: 700;
+            transition: font-weight .2s;
+          }
+        }
+      }
+    }
+  }
+  &-height{
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+
+    &__button{
+      position: relative;
+      display: flex;
+      background: none;
+      border: 0 none;
+      font-family: "Proxima-Nova";
+      font-size: 14px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: 0.56px;
+      color: $orange;
+      text-transform: uppercase;
+      width: max-content;
+      padding: 0;
+      margin: 10px 0;
+      cursor: pointer;
+      border-bottom: 1px solid $orange;
+      &.active{
+        display: none;
+      }
+    }
+
+    &__pop-up {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      padding: 10px 30px 10px 25px;
+      &_deep{
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        height: 0;
+        transition: height .2s;
+        &.active {
+          display: flex;
+          height: 100%;
+          transition: height .2s;
+        }
+      }
+      &.active {
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+      & span{
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #b5b5b6;
+        display: flex;
+        align-items: center;
+      }
+      & input {
+        display: none;
+        &:checked + label:after{
+          display: flex;
+        }
+      }
+      & label{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        width: max-content;
+        align-items: center;
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        color: #202124;
+        margin: 10px 5px 10px 0;
+        &:before{
+          position: relative;
+          display: flex;
+          content: "";
+          width: 20px;
+          height: 20px;
+          border: solid 1px #d4d3d3;
+          border-radius: 50%;
+          padding: 3px;
+          margin-right: 10px;
+        }
+        &:after{
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: $orange;
+          left: 4px;
+          display: none;
+        }
+      }
+    }
+  }
+  &-color{
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+    &__pop-up {
+      position: relative;
+      width: 100%;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      padding: 10px 30px 10px 25px;
+      align-items: center;
+      &.active {
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+      & span{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+      }
+      & input {
+        display: none;
+        &:checked + label:after{
+          width: 40px;
+          height: 40px;
+          transition: width .2s, height .2s;
+        }
+        &#cl1, &.bla{
+          & + label:after{
+            background: #333333;
+          }
+        }
+        &#cl2, &.blu{
+          & + label:after{
+            background: #545f98;
+          }
+        }
+        &#cl3, &.yel{
+          & + label:after{
+            background: #f3df24;
+          }
+        }
+        &#cl4, &.gre{
+          & + label:after{
+            background: #4cbb25;
+          }
+        }
+        &#cl5, &.red{
+          & + label:after{
+            background: #f25837;
+          }
+        }
+      }
+      & label{
+        position: relative;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border: solid 1px $gray_ap;
+        border-radius: 50%;
+        cursor: pointer;
+        &:after{
+          position: relative;
+          display: flex;
+          width: 22px;
+          height: 22px;
+          content: "";
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: width .2s, height .2s;
+        }
+      }
+    }
+  }
+  &-pock{
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+
+    &__button{
+      position: relative;
+      display: flex;
+      background: none;
+      border: 0 none;
+      font-family: "Proxima-Nova";
+      font-size: 14px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: 0.56px;
+      color: $orange;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 10px 0;
+      cursor: pointer;
+      width: max-content;
+      border-bottom: 1px solid $orange;
+      &.active{
+        display: none;
+      }
+    }
+    &__pop-up {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      padding: 10px 30px 10px 25px;
+      &_deep{
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        height: 0;
+        transition: height .2s;
+        &.active {
+          display: flex;
+          height: 100%;
+          transition: height .2s;
+        }
+      }
+      &.active {
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+      & span{
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #b5b5b6;
+        display: flex;
+        align-items: center;
+      }
+      & input {
+        display: none;
+        &:checked + label:after{
+          display: flex;
+        }
+      }
+      & label{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        width: max-content;
+        align-items: center;
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        color: #202124;
+        margin: 10px 5px 10px 0;
+        &:before{
+          position: relative;
+          display: flex;
+          content: "";
+          width: 20px;
+          height: 20px;
+          border: solid 1px #d4d3d3;
+          border-radius: 50%;
+          padding: 3px;
+          margin-right: 10px;
+        }
+        &:after{
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: $orange;
+          left: 4px;
+          display: none;
+        }
+      }
+    }
+  }
+  &-dop{
+
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+
+    &__button{
+      position: relative;
+      display: flex;
+      background: none;
+      border: 0 none;
+      font-family: "Proxima-Nova";
+      font-size: 14px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: 0.56px;
+      color: $orange;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 10px 0;
+      cursor: pointer;
+      width: max-content;
+      border-bottom: 1px solid $orange;
+      &.active{
+        display: none;
+      }
+    }
+    &__pop-up {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      padding: 10px 30px 10px 25px;
+      &_deep{
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        height: 0;
+        transition: height .2s;
+        &.active {
+          display: flex;
+          height: 100%;
+          transition: height .2s;
+        }
+      }
+      &.active {
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+      & span{
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #b5b5b6;
+        display: flex;
+        align-items: center;
+      }
+      & input {
+        display: none;
+        &:checked + label:after{
+          display: flex;
+        }
+      }
+      & label{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        width: max-content;
+        align-items: center;
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        color: #202124;
+        margin: 10px 5px 10px 0;
+        &:before{
+          position: relative;
+          display: flex;
+          content: "";
+          width: 20px;
+          height: 20px;
+          border: solid 1px #d4d3d3;
+          border-radius: 50%;
+          padding: 3px;
+          margin-right: 10px;
+        }
+        &:after{
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: $orange;
+          left: 4px;
+          display: none;
+        }
+      }
+    }
+  }
+  &-loop{
+
+    position: relative;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+
+    &__button{
+      position: relative;
+      display: flex;
+      background: none;
+      border: 0 none;
+      font-family: "Proxima-Nova";
+      font-size: 14px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: 0.56px;
+      color: $orange;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 10px 0;
+      cursor: pointer;
+      width: max-content;
+      border-bottom: 1px solid $orange;
+      &.active{
+        display: none;
+      }
+    }
+    &__pop-up {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      height: 0;
+      transition: height .2s;
+      padding: 10px 30px 10px 25px;
+      &_deep{
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        height: 0;
+        transition: height .2s;
+        &.active {
+          display: flex;
+          height: 100%;
+          transition: height .2s;
+        }
+      }
+      &.active {
+        display: flex;
+        height: 100%;
+        transition: height .2s;
+      }
+      & span{
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #b5b5b6;
+        display: flex;
+        align-items: center;
+      }
+      & input {
+        display: none;
+        &:checked + label:after{
+          display: flex;
+        }
+      }
+      & label{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        width: max-content;
+        align-items: center;
+        font-family: "Proxima-Nova";
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        color: #202124;
+        margin: 10px 5px 10px 0;
+        &:before{
+          position: relative;
+          display: flex;
+          content: "";
+          width: 20px;
+          height: 20px;
+          border: solid 1px #d4d3d3;
+          border-radius: 50%;
+          padding: 3px;
+          margin-right: 10px;
+        }
+        &:after{
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: $orange;
+          left: 4px;
+          display: none;
+        }
+      }
+    }
+  }
+}
